@@ -1,0 +1,13 @@
+fastapi
+requests
+uvicorn[standard]
+pymongo[srv]
+websockets
+PyJWT
+pydantic[email]
+bcrypt
+sqlalchemy
+fastapi-sqlalchemy
+python-dotenv
+psycopg2
+alembic
