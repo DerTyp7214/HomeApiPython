@@ -76,7 +76,7 @@ topBorder
 spaces
 spaces
 spaces
-centerText "Home Api" "32" true
+centerText "Home Api Python" "32" true
 spaces
 centerText "Welcome to the setup script for the project" "95"
 spaces
