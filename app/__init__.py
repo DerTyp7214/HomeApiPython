@@ -107,6 +107,7 @@ def refresh(token: str = Depends(JWTBearer())):
 @dataclass
 class UserResponse():
     email: str
+    username: str
 
 
 @app.get("/api/auth/me", responses={200: {"model": UserResponse}, 401: {"model": ErrorResponse}})
@@ -115,9 +116,10 @@ def me(token: str = Depends(JWTBearer())):
     if decoded is None:
         return JSONResponse(status_code=401, content={"error": "Invalid token"})
     email = decoded["email"]
-    if email is None:
+    username = decoded["username"]
+    if email is None or username is None:
         return JSONResponse(status_code=401, content={"error": "Invalid token"})
-    return JSONResponse(status_code=200, content={"email": email})
+    return JSONResponse(status_code=200, content={"email": email, "username": username})
 
 
 if os.path.exists(dist):
