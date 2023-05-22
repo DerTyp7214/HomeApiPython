@@ -1,5 +1,5 @@
 from typing import List
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import ForeignKey, Integer, String
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 
 from .database import Base
